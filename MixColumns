@@ -1,0 +1,53 @@
+public class MatrixMultiplication { 
+    static final int R1 = 4; 
+    static final int C1 = 4; 
+    static final int C2 = 1; 
+ 
+    static void matrixMultiply(int[][] mat1, int[] mat2, int[] res) { 
+        for (int i = 0; i < R1; i++) { 
+            res[i] = 0; 
+            for (int j = 0; j < C1; j++) { 
+                res[i] += mat1[i][j] * mat2[j]; 
+            } 
+        } 
+    } 
+ 
+    static void printMatrix(int[] mat, int rows, int cols) { 
+        for (int i = 0; i < rows; i++) { 
+            for (int j = 0; j < cols; j++) { 
+                System.out.print(mat[i * cols + j] + " "); 
+            } 
+            System.out.println(); 
+        } 
+    } 
+ 
+    public static void main(String[] args) { 
+        int[][] mat1 = { 
+            {2, 3, 1, 1}, 
+            {1, 2, 3, 1}, 
+            {1, 1, 2, 3}, 
+            {3, 1, 1, 2} 
+        }; 
+ 
+        int[] mat2 = {34, 44, 9, 24}; 
+        int[] res = new int[R1]; 
+ 
+        System.out.println("Matrix 1:"); 
+        for (int i = 0; i < R1; i++) { 
+            for (int j = 0; j < C1; j++) { 
+                System.out.print(mat1[i][j] + " "); 
+            } 
+            System.out.println(); 
+        } 
+ 
+        System.out.println("\nMatrix 2:"); 
+        printMatrix(mat2, R1, C2); 
+ 
+        matrixMultiply(mat1, mat2, res); 
+ 
+        System.out.println("\nResult Matrix:"); 
+        for (int i = 0; i < R1; i++) { 
+System.out.println(res[i]); 
+} 
+} 
+}
